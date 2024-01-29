@@ -1,5 +1,7 @@
 #include "aaa.h"
 
 int main() {
-  f();
+    f();
+
+    return 0;
 }

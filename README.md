@@ -1,1 +1,1 @@
-# C language practice.
+# C++ language practice.
