@@ -2,14 +2,13 @@
 
 int main(void) {
     int x = 123;
-    // const int* p = &x;
-    // *p = 456;
+    int* p = &x;
+    int& r = x;
 
-    int* const p = &x;
-    *p = 456;
-    // p = nullptr;
+    x = 200;
 
     std::cout << *p << std::endl;
+    std::cout <<  r  << std::endl;
 
     return 0;
 }
