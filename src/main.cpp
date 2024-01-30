@@ -1,7 +1,11 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    const int x = 5;
+
+    x = 10;
+
+    std::cout << x << std::endl;
 
     return 0;
 }
