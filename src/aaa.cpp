@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "aaa.h"
+#include "aaa.hpp"
 
 void f() {
   printf("hello\n");
