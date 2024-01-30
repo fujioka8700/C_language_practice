@@ -1,10 +1,19 @@
 #include <iostream>
-#include <cstdint>
 
 int main(void) {
-    float x = 5.2;
+    enum Day {
+        Sun,
+        Mon,
+        Tue,
+        Wed,
+        Thu,
+        Fri,
+        Sat
+    };
 
-    std::cout << x << std::endl;
+    Day day = Wed;
+
+    std::cout << day << std::endl;
 
     return 0;
 }
