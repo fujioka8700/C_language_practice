@@ -1,7 +1,9 @@
 #include <iostream>
 
 int main(void) {
-    std::cout << 26l << std::endl;
+    int x = 5;
+
+    std::cout << x << std::cout;
 
     return 0;
 }
