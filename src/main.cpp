@@ -4,7 +4,7 @@ int main(void) {
     int x = 5;
     bool done = false;
 
-    while (!done)
+    do
     {
         std::cout << x << std::endl;
 
@@ -12,9 +12,10 @@ int main(void) {
         {
             done = true;    
         }
-        
+
         x++;
-    }
+    } while (!done);
+
     std::cout << "終わり" << std::endl;
     
     return 0;
