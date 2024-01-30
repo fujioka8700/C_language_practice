@@ -2,13 +2,13 @@
 
 int main(void) {
     int x = 123;
-    int* p = &x;
-    int& r = x;
-
-    x = 200;
-
-    std::cout << *p << std::endl;
-    std::cout <<  r  << std::endl;
+    
+    /**
+     * これもコメント
+     * これもコメント
+    */
+    // コメント
+    std::cout <<  x  << std::endl;
 
     return 0;
 }
