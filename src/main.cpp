@@ -1,17 +1,17 @@
 #include <iostream>
+#include <bitset>
 
 int main(void) {
-    int x = 5;
+    auto bits_a = std::bitset<8>("00001111");
+    std::cout << bits_a << std::endl;
+    // std::cout << (bits_a << 5) << std::endl;
 
-    for (int i = 0; i < 5; i++)
-    {
-        ++x;
+    auto bits_b = std::bitset<8>("00111100");
+    std::cout << bits_b << std::endl;
 
-        std::cout << x << std::endl;
-    }
-    
-
-    std::cout << "終わり" << std::endl;
+    std::cout << (bits_a & bits_b) << std::endl;
+    std::cout << (bits_a | bits_b) << std::endl;
+    std::cout << (bits_a ^ bits_b) << std::endl;
     
     return 0;
 }
