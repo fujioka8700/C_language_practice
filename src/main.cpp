@@ -1,16 +1,14 @@
 #include <iostream>
 
-void Print(int x) {
-    std::cout << "int: " << x << std::endl;
-}
-
-void Print(double x) {
-    std::cout << "double: " << x << std::endl;
+int Add(int x, int y) {
+    return x + y;
 }
 
 int main(int argc, char* argv[]) {
-    Print(5);
-    Print(8.4);
+    int (*fp)(int, int) = Add;
+    int result = fp(3, 5);
+
+    std::cout << result << std::endl;
     
     return 0;
 }
