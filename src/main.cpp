@@ -1,20 +1,21 @@
 #include <iostream>
 
 int main(void) {
-    int x = 7;
+    int x = 5;
+    bool done = false;
 
-    switch (x)
+    while (!done)
     {
-    case 5:
-        std::cout << "5です" << std::endl;
-        break;
-    case 6:
-        std::cout << "6です" << std::endl;
-        break;
-    default:
-        std::cout << "5と6以外です" << std::endl;
-        break;
+        std::cout << x << std::endl;
+
+        if (x == 10)
+        {
+            done = true;    
+        }
+        
+        x++;
     }
+    std::cout << "終わり" << std::endl;
     
     return 0;
 }
