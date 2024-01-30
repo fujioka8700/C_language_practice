@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main(void) {
-    enum Day {
+    enum class Day {
         Sun,
         Mon,
         Tue,
@@ -11,9 +11,10 @@ int main(void) {
         Sat
     };
 
-    Day day = Wed;
+    // Day day = Wed;
+    Day day = Day::Thu;
 
-    std::cout << day << std::endl;
+    std::cout << static_cast<int>(day) << std::endl;
 
     return 0;
 }
