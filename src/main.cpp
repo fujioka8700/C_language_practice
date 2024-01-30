@@ -1,15 +1,15 @@
 #include <iostream>
 
 int main(void) {
-    int  x =  5;
-    int* p = &x;
-    int  y = *p;
+    int x = 123;
+    // const int* p = &x;
+    // *p = 456;
 
-    x = 10;
+    int* const p = &x;
+    *p = 456;
+    // p = nullptr;
 
-    std::cout << "x=" <<  x << std::endl;
-    std::cout << "p=" << *p << std::endl;
-    std::cout << "y=" <<  y << std::endl;
+    std::cout << *p << std::endl;
 
     return 0;
 }
