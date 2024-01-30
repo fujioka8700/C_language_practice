@@ -1,13 +1,9 @@
 #include <iostream>
 
-int Add(int x, int y) {
-    return x + y;
-}
+auto func = [](int a, int b) -> int { return a + b; };
 
 int main(int argc, char* argv[]) {
-    // int (*fp)(int, int) = Add;
-    auto fp = Add;
-    int result = fp(3, 5);
+    int result = func(4, 6);
 
     std::cout << result << std::endl;
     
