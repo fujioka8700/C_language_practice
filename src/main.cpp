@@ -1,11 +1,18 @@
 #include <iostream>
 
-auto func = [](int a, int b) -> int { return a + b; };
-
 int main(int argc, char* argv[]) {
-    int result = func(4, 6);
+    int init = 5;
 
-    std::cout << result << std::endl;
+    int (*fp)(int, int) = [](int a, int b) -> int { return a * b; };
+    auto g = [&init](int a, int b) -> int { return init + a * b; };
+
+    init = 0;
+
+    int result_copy = fp(4, 6);
+    std::cout << result_copy << std::endl;
+
+    int result_ref = g(4, 6);
+    std::cout << result_ref << std::endl;
     
     return 0;
 }
