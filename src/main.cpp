@@ -1,7 +1,8 @@
 #include <iostream>
+#include <cstdint>
 
-int main(int argc, char *argv[]) {
-    unsigned int x = 4000000;
+int main(void) {
+    std::int16_t x = 5;
 
     std::cout << x << std::endl;
 
