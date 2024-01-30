@@ -2,16 +2,11 @@
 #include <bitset>
 
 int main(void) {
-    auto bits_a = std::bitset<8>("00001111");
-    std::cout << bits_a << std::endl;
-    // std::cout << (bits_a << 5) << std::endl;
+    unsigned int a = 0x0000000f;
 
-    auto bits_b = std::bitset<8>("00111100");
-    std::cout << bits_b << std::endl;
-
-    std::cout << (bits_a & bits_b) << std::endl;
-    std::cout << (bits_a | bits_b) << std::endl;
-    std::cout << (bits_a ^ bits_b) << std::endl;
+    std::cout << std::showbase << std::hex;
+    std::cout << ~a << std::endl;
+    std::cout << ~(a << 2) << std::endl;
     
     return 0;
 }
