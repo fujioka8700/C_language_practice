@@ -1,10 +1,16 @@
 #include <iostream>
 
+void Print(int x) {
+    std::cout << "int: " << x << std::endl;
+}
+
+void Print(double x) {
+    std::cout << "double: " << x << std::endl;
+}
+
 int main(int argc, char* argv[]) {
-    for (int i = 0; i < argc; i++)
-    {
-        std::cout << "[" << i << "]=" << argv[i] << std::endl;
-    }
+    Print(5);
+    Print(8.4);
     
     return 0;
 }
