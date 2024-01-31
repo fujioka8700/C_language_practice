@@ -1,13 +1,13 @@
 #include <iostream>
-using namespace std;
+#include <string>
+#include <tuple>
 
 int main(int argc, char* argv[]) {
-    string s = "Hello";
+    std::tuple<std::string, int>person { "Bob", 20 };
 
-    cout << s[0] << endl;
-    cout << s.size() << endl;
+    std::cout << std::get<0>(person) << std::endl;
     
-    cout << "おわり" << endl;
+    std::cout << "おわり" << std::endl;
 
     return 0;
 }
