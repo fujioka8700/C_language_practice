@@ -1,30 +1,19 @@
 #include <iostream>
-
-void PringArray1(const int x[5]) {
-    for (int i = 0; i < 5; i++)
-    {
-        std::cout << x[i] << std::endl;
-    }
-    
-    std::cout << "PringArray1 end" << std::endl;
-}
-
-void PringArray2(const int* p) {
-    for (int i = 0; i < 5; i++)
-    {
-        std::cout << *(p+i) << std::endl;
-    }
-    
-    std::cout << "PringArray2 end" << std::endl;
-}
+#include <array>
+using namespace std;
 
 int main(int argc, char* argv[]) {
-    int x[] = {2, 4, 6, 8, 10};
+    std::array<int, 5>x = {2, 4, 6, 8, 10};
 
-    PringArray1(x);
-    PringArray2(x);
+    cout << x[4] << endl;
 
-    std::cout << "おわり" << std::endl;
+    // int arr1[3] = {1,2,3};
+    // array<int,3>y = {100, 200, 300};
+    array<int, 5>y = x;
+
+    cout << y[1] << endl;
+    
+    cout << "おわり" << endl;
 
     return 0;
 }
