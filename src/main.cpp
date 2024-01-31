@@ -1,14 +1,13 @@
 #include <iostream>
-#include <string>
-#include <tuple>
+#include <vector>
 
 int main(int argc, char* argv[]) {
-    // std::tuple<std::string, int, std::string>person = { "Bob", 20, "USA" };
+    std::vector<int> x = {0, 1, 2, 3};
+    
+    x[2] = 100;
 
-    std::pair<std::string, int> person { "Bob", 20 };
-
-    std::cout << std::get<1>(person) << std::endl;
-    std::cout << person.first << std::endl;
+    std::cout << x[0] << std::endl;
+    std::cout << x.size() << std::endl;
     
     std::cout << "おわり" << std::endl;
 
