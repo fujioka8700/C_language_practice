@@ -1,5 +1,6 @@
 #include "aaa.hpp"
 #include <stdio.h>
+#include <iostream>
 
 namespace {
   int x = 50;
@@ -20,4 +21,12 @@ void Print() {
   printf("%d\n", A::x);
 
   printf("Printを終了した。\n");
+}
+
+inline void HelloWorld() {
+  std::cout << "aaaのHelloWorld!" << std::endl;
+}
+
+void Something() {
+  HelloWorld();
 }

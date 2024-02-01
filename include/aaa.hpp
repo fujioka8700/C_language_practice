@@ -3,5 +3,7 @@
 
 void DoSomething();
 void Print();
+void HelloWorld();
+void Something();
 
 #endif

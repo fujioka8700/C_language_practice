@@ -1,10 +1,14 @@
 #include "aaa.hpp"
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-    DoSomething();
+void HelloWorld() {
+  std::cout << "mainのHelloWorld!" << std::endl;
+}
 
-    Print();
+int main(int argc, char* argv[]) {
+    HelloWorld();
+
+    Something();
 
     std::cout << "おわり" << std::endl;
 
