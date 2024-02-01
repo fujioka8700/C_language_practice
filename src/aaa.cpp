@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "aaa.hpp"
 
-void f() {
-  printf("hello\n");
+void DoSometing() {
+  printf("何かをする\n");
 }
