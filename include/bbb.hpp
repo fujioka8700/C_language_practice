@@ -1,6 +1,6 @@
 #ifndef BBB_H_
 #define BBB_H_
 
-void DoSometing2();
+void DoSomething2();
 
 #endif

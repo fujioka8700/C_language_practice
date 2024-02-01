@@ -1,13 +1,10 @@
-#include <iostream>
 #include "aaa.hpp"
+#include <iostream>
 
 int main(int argc, char* argv[]) {
-    // std::cout << ::x << std::endl;
-    DoSometing();
+    DoSomething();
 
-    extern int x;
-
-    std::cout << x << std::endl;
+    Print();
 
     std::cout << "おわり" << std::endl;
 

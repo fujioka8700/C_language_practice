@@ -1,5 +1,5 @@
 #include <stdio.h>
 
-void DoSometing2() {
+void DoSomething2() {
     printf("DoSomething2\n");
 }

@@ -1,12 +1,23 @@
+#include "aaa.hpp"
 #include <stdio.h>
-#include "bbb.hpp"
 
-static int x = 246;
+namespace {
+  int x = 50;
+}
 
-void DoSometing() {
-  printf("何かをする\n");
+namespace A {
+  int x = 100;
+}
 
-  printf("%d\n", ::x);
+void DoSomething() {
+  printf("DoSomethingを実行した。\n");
+}
 
-  DoSometing2();
+void Print() {
+  printf("Printを実行した。\n");
+
+  printf("%d\n", x);
+  printf("%d\n", A::x);
+
+  printf("Printを終了した。\n");
 }
