@@ -1,6 +1,9 @@
 #ifndef AAA_H_
 #define AAA_H_
 
-void f();
+void DoSomething();
+void Print();
+void HelloWorld();
+void Something();
 
-#endif  // AAA_H_
+#endif
