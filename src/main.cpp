@@ -1,21 +1,20 @@
 #include <iostream>
+#include "aaa.hpp"
 
-int x = 100;
+#ifndef HOGE
+#define HOGE
+int hoge = 5;
+#endif
+#ifndef HOGE
+#define HOGE
+int hoge = 5;
+#endif
 
 int main(int argc, char* argv[]) {
-    int x = 5;
+    // std::cout << ::x << std::endl;
+    DoSometing();
 
-    std::cout << ::x << std::endl;
-
-    std::cout << x << std::endl;
-
-    {
-        int x = 10;
-
-        std::cout << x << std::endl;
-    }
-
-    std::cout << x << std::endl;
+    std::cout << hoge << std::endl;
 
     std::cout << "おわり" << std::endl;
 
