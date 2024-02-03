@@ -1,19 +1,13 @@
 #include "aaa.hpp"
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
 
-int main(int argc, char* argv[]) {
-  std::ofstream file("../files/fruits.txt", std::ios::app);
-  std::vector<std::string> fruits = { "apple", "strawberry", "pear", "grape" };
+void Function() {
+  int x = 100;
+  int y = 200;
+}
 
-  for (const auto &fruit: fruits)
-  {
-    file << fruit << std::endl;
-  }
-  
-  std::cout << "おわり" << std::endl;
+int main(int argc, char* argv[]) {  
+  Function();
 
   return 0;
 }
