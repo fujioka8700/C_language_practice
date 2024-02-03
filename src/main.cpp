@@ -1,18 +1,22 @@
 #include "aaa.hpp"
 #include <iostream>
-#include <fstream>
-#include <string>
 #include <vector>
+#include <string>
+
+void Print(std::string&) {
+  std::cout << "左辺値参照" << std::endl;
+}
+
+void Print(std::string&&) {
+  std::cout << "右辺値参照" << std::endl;
+}
 
 int main(int argc, char* argv[]) {
-  std::ofstream file("../files/fruits.txt", std::ios::app);
-  std::vector<std::string> fruits = { "apple", "strawberry", "pear", "grape" };
+  std::string str = "hoge";
 
-  for (const auto &fruit: fruits)
-  {
-    file << fruit << std::endl;
-  }
-  
+  Print(str);
+  Print(std::move(str));
+
   std::cout << "おわり" << std::endl;
 
   return 0;
