@@ -1,13 +1,11 @@
 #include "aaa.hpp"
 #include <iostream>
 
-void Function() {
-  int x = 100;
-  int y = 200;
-}
+int main(int argc, char* argv[]) {
+  int* p1 = new int(100);
+  int* p2 = new int[5];
 
-int main(int argc, char* argv[]) {  
-  Function();
+  std::cout << "おわり" << std::endl;
 
   return 0;
 }
