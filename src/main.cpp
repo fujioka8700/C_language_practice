@@ -1,22 +1,13 @@
 #include "aaa.hpp"
 #include <iostream>
-
-void changeToFifty1(int v) {
-  v = 50;
-}
-
-void changeToFifty2(int* v) {
-  *v = 50;
-}
+#include <vector>
 
 int main(int argc, char* argv[]) {
-  int a = 100;
-  changeToFifty1(a);
-  std::cout << a << std::endl;
+  std::vector<int> x(1000000);
+  std::vector<int> y = x;
 
-  int b = 100;
-  changeToFifty2(&b);
-  std::cout << b << std::endl;
+  std::cout << &x << std::endl;
+  std::cout << &y << std::endl;
 
   std::cout << "おわり" << std::endl;
 
