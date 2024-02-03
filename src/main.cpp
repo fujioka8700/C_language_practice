@@ -1,16 +1,11 @@
 #include "aaa.hpp"
 #include <iostream>
-
-void HelloWorld() {
-  std::cout << "mainのHelloWorld!" << std::endl;
-}
+#include <string>
 
 int main(int argc, char* argv[]) {
-    HelloWorld();
+  std::cerr << "エラー" << std::endl;
 
-    Something();
+  std::cout << "おわり" << std::endl;
 
-    std::cout << "おわり" << std::endl;
-
-    return 0;
+  return 0;
 }
