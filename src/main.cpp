@@ -2,14 +2,14 @@
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-  int* p1 = new int(100);
-  int* p2 = new int[5];
+  // deep copy
+  int x = 100;
+  int y = x;
 
-  delete p1;
-  delete[] p2;
+  y = 50;
 
-  std::cout << "*p1=" << *p1 << std::endl;
-  std::cout << "*p2=" << *p2 << std::endl;
+  std::cout << x << std::endl; // x はそのまま
+  std::cout << y << std::endl;
 
   std::cout << "おわり" << std::endl;
 
