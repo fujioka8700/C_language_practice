@@ -1,13 +1,21 @@
 #include "aaa.hpp"
 #include <iostream>
 #include <vector>
+#include <string>
+
+void Print(std::string&) {
+  std::cout << "左辺値参照" << std::endl;
+}
+
+void Print(std::string&&) {
+  std::cout << "右辺値参照" << std::endl;
+}
 
 int main(int argc, char* argv[]) {
-  std::vector<int> x(1000000);
-  std::vector<int> y = std::move(x);
+  std::string str = "hoge";
 
-  // std::cout << x[] << std::endl;
-  std::cout << y[0] << std::endl;
+  Print(str);
+  Print(std::move(str));
 
   std::cout << "おわり" << std::endl;
 
