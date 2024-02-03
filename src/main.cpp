@@ -3,12 +3,11 @@
 #include <vector>
 
 int main(int argc, char* argv[]) {
-  std::vector<int>* x = new std::vector<int>(1000000);
-  std::vector<int>* y = x;
-  x = nullptr;
+  std::vector<int> x(1000000);
+  std::vector<int> y = std::move(x);
 
-  std::cout << x << std::endl;
-  std::cout << y << std::endl;
+  // std::cout << x[] << std::endl;
+  std::cout << y[0] << std::endl;
 
   std::cout << "おわり" << std::endl;
 
