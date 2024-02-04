@@ -2,7 +2,7 @@
 
 class Rectangle {
   public:
-    Rectangle(int height, int width);
+    Rectangle();
 
     int Area() const {
       return height_ * width_;
@@ -13,11 +13,10 @@ class Rectangle {
     const int width_;
 };
 
-Rectangle::Rectangle(int height, int width) :
-  height_(height), width_(width) {}
+Rectangle::Rectangle() : height_(), width_() {}
 
 int main(int argc, char* argv[]) {
-  Rectangle r(10, 20);
+  Rectangle r;
 
   std::cout << r.Area() << std::endl;
 
