@@ -2,19 +2,18 @@
 #include <memory>
 
 int main(int argc, char* argv[]) {
-  std::shared_ptr<int> sp = std::make_shared<int>(246);
-  std::weak_ptr<int> wp = sp;
+  class Rectangle {
+    public:
+      int height;
+      int width;
+  };
 
-  std::shared_ptr<int> sp2 = wp.lock();
+  Rectangle r;
+  r.height = 10;
+  r.width = 20;
 
-  if (sp2) {
-    std::cout << *sp2 << std::endl;
-  } else {
-    std::cout << "リソースは開放済み" << std::endl;
-  }
-
-  std::cout << *sp2 << std::endl;
-  std::cout << *sp << std::endl;
+  std::cout << r.height << std::endl;
+  std::cout << r.width << std::endl;
   
   std::cout << "おわり" << std::endl;
 
