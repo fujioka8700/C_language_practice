@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
 
   std::cout << r->height << std::endl;
   std::cout << (*r).width << std::endl;
+  std::cout << r->height << std::endl;
   
   std::cout << "おわり" << std::endl;
 
