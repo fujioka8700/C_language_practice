@@ -5,7 +5,9 @@ class Rectangle {
     Rectangle(int height, int width) :
       height_(height), width_(width) {}
 
-    int Area() const;
+    int Area() const {
+      return height_ * width_;
+    };
 
   private:
     const int height_;
@@ -15,7 +17,7 @@ class Rectangle {
 int main(int argc, char* argv[]) {
   Rectangle r(10, 20);
 
-  // std::cout << r << std::endl;
+  std::cout << r.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
