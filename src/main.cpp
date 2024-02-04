@@ -8,12 +8,14 @@ int main(int argc, char* argv[]) {
       int width;
   };
 
-  Rectangle r;
-  r.height = 10;
-  r.width = 20;
+  Rectangle rectangle;
+  Rectangle* r = &rectangle;
+  r->height = 10;
+  (*r).height = 20;
+  (*r).width = 30;
 
-  std::cout << r.height << std::endl;
-  std::cout << r.width << std::endl;
+  std::cout << r->height << std::endl;
+  std::cout << (*r).width << std::endl;
   
   std::cout << "おわり" << std::endl;
 
