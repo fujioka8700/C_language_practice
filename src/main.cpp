@@ -1,25 +1,17 @@
 #include <iostream>
 
-class Rectangle {
+class Movable {
   public:
-    Rectangle(int height, int width);
-
-    int Area() const {
-      return height_ * width_;
-    };
-
-  private:
-    const int height_;
-    const int width_;
+    Movable() {};
+    Movable(Movable&& m) {};
 };
 
-Rectangle::Rectangle(int height, int width) :
-  height_(height), width_(width) {}
-
 int main(int argc, char* argv[]) {
-  Rectangle r(10, 20);
-
-  std::cout << r.Area() << std::endl;
+  Movable m1;
+  Movable m2(std::move(m1));
+  
+  std::cout << &m2 << std::endl;
+  std::cout << &m1 << std::endl;
 
   std::cout << "おわり" << std::endl;
 
