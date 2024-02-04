@@ -3,7 +3,7 @@
 
 class Rectangle {
   public:
-    int Area() {
+    int Area() const {
       return this->height * this->width;
     };
 
