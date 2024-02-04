@@ -2,14 +2,8 @@
 #include <memory>
 
 int main(int argc, char* argv[]) {
-  std::shared_ptr<int> x = std::make_shared<int>(100);
-
-  {
-    std::cout << *x << std::endl;
-    std::shared_ptr<int> y = x;
-
-    std::cout << *y << std::endl;
-  }
+  std::unique_ptr<int> x(new int(100));
+  std::unique_ptr<int> y = x;
 
   std::cout << *x << std::endl;
   
