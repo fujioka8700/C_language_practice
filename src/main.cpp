@@ -1,31 +1,44 @@
 #include <iostream>
 
-class Rectangle {
+class DynamicArray {
   public:
-    Rectangle(int height, int width) : height_(height), width_(width) {
-      std::cout << "Rectangle::Rectangle() is called." << std::endl;
+    DynamicArray(int size, int initial_value) {
+      data_ = new int[size];
+      size_ = size;
+
+      for (int i = 0; i < size; i++) {
+        data_[i] = initial_value;
+      }
     }
 
-    int Area() {
-      return height_ * width_;
+    void Set(int index, int value) {
+      data_[index] = value;
+    }
+
+    int Get(int index) const {
+      return data_[index];
+    }
+
+    ~DynamicArray() {
+      std::cout << "DynamicArray::~DynamicArray() is called." << std::endl;
+      delete[] data_;
+
+      for (int i = 0; i < size_; i++) {
+        std::cout << data_[i] << std::endl;
+      }
     }
 
   private:
-    const int height_;
-    const int width_;
-};
-
-class Square : public Rectangle {
-  public:
-    Square(int size) : Rectangle(size, size) {
-      std::cout << "Square::Square() is called." << std::endl;
-    }
+    int* data_;
+    int size_;
 };
 
 int main(int argc, char* argv[]) {
-  Square s(10);
+  DynamicArray d(5, 1);
 
-  std::cout << s.Area() << std::endl;
+  d.Set(2,11);
+
+  std::cout << d.Get(2) << std::endl;
 
   std::cout << "おわり" << std::endl;
 
