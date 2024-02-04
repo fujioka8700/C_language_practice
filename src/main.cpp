@@ -3,13 +3,14 @@
 
 class Rectangle {
   public:
-    int Area();
+    int Area() const;
 
     int height;
     int width;
 };
 
-int Rectangle::Area() {
+int Rectangle::Area() const {
+  // height = 0;
   return height * width;
 };
 
