@@ -3,15 +3,14 @@
 
 class Rectangle {
   public:
-    int Area() const;
+    int Area();
 
     int height;
     int width;
 };
 
-int Rectangle::Area() const {
-  // height = 0;
-  return height * width;
+int Rectangle::Area() {
+  return this->height * this->width;
 };
 
 int main(int argc, char* argv[]) {
