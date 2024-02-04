@@ -1,17 +1,19 @@
 #include <iostream>
 #include <memory>
 
-int main(int argc, char* argv[]) {
-  class Rectangle {
-    public:
-      int Area() {
-        return height * width;
-      }
+class Rectangle {
+  public:
+    int Area();
 
-      int height;
-      int width;
-  };
-  
+    int height;
+    int width;
+};
+
+int Rectangle::Area() {
+  return height * width;
+};
+
+int main(int argc, char* argv[]) {
   Rectangle r;
   r.height = 10;
   r.width = 20;
