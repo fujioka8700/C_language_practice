@@ -4,20 +4,20 @@
 int main(int argc, char* argv[]) {
   class Rectangle {
     public:
+      int Area() {
+        return height * width;
+      }
+
       int height;
       int width;
   };
-
-  Rectangle rectangle;
-  Rectangle* r = &rectangle;
-  r->height = 10;
-  (*r).height = 20;
-  (*r).width = 30;
-
-  std::cout << r->height << std::endl;
-  std::cout << (*r).width << std::endl;
-  std::cout << r->height << std::endl;
   
+  Rectangle r;
+  r.height = 10;
+  r.width = 20;
+
+  std::cout << r.Area() << std::endl;
+
   std::cout << "おわり" << std::endl;
 
   return 0;
