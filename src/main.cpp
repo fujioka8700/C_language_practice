@@ -4,29 +4,37 @@
 class Rectangle {
   public:
     int Area() const {
-      return this->height * this->width;
+      return height_ * width_;
     };
   
-    int height;
-    int width;
+    virtual void Describe() const {
+      std::cout << "height=" << height_ << std::endl;
+      std::cout << "width=" << width_ << std::endl;
+    }
+
+    int height_;
+    int width_;
 };
 
 class Squere : public Rectangle {
   public:
     void setSize(int size) {
-      height = size;
-      width = size;
+      height_ = size;
+      width_ = size;
+    }
+
+    void Describe() const override {
+      std::cout << "size=" << height_ << std::endl;
     }
 };
 
 int main(int argc, char* argv[]) {
   Squere s;
   s.setSize(10);
-
-  std::cout << "s=" << s.Area() << std::endl;
+  s.Describe();
 
   Rectangle& r = s;
-  std::cout << "r=" << r.Area() << std::endl;
+  r.Describe();
 
   std::cout << "おわり" << std::endl;
 
