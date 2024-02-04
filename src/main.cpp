@@ -6,13 +6,12 @@ class Rectangle {
     int Area() const {
       return this->height * this->width;
     };
-
-  private:
+  
     int height;
     int width;
 };
 
-class Squere : public Rectangle {
+class Squere : protected Rectangle {
   public:
     void setSize(int size) {
       height = size;
