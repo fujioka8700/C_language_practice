@@ -3,22 +3,26 @@
 
 class Rectangle {
   public:
-    int Area();
+    int Area() {
+      return this->height * this->width;
+    };
 
     int height;
     int width;
 };
 
-int Rectangle::Area() {
-  return this->height * this->width;
+class Squere : public Rectangle {
+  public:
+    void setSize(int size) {
+      height = size;
+      width = size;
+    }
 };
 
 int main(int argc, char* argv[]) {
-  Rectangle r;
-  r.height = 10;
-  r.width = 20;
-
-  std::cout << r.Area() << std::endl;
+  Squere s;
+  s.setSize(10);
+  std::cout << s.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
