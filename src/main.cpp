@@ -2,11 +2,19 @@
 #include <memory>
 
 int main(int argc, char* argv[]) {
-  std::unique_ptr<int> x(new int(100));
-  std::unique_ptr<int> y(std::move(x));
+  std::shared_ptr<int> sp = std::make_shared<int>(246);
+  std::weak_ptr<int> wp = sp;
 
-  // std::cout << *x << std::endl;
-  std::cout << *y << std::endl;
+  std::shared_ptr<int> sp2 = wp.lock();
+
+  if (sp2) {
+    std::cout << *sp2 << std::endl;
+  } else {
+    std::cout << "リソースは開放済み" << std::endl;
+  }
+
+  std::cout << *sp2 << std::endl;
+  std::cout << *sp << std::endl;
   
   std::cout << "おわり" << std::endl;
 
