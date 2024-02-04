@@ -1,17 +1,21 @@
 #include <iostream>
 
-class Movable {
+class Square {
   public:
-    Movable() {};
-    Movable(Movable&& m) {};
+    Square(int size) : size_(size) {};
+
+    int Area() {
+      return size_ * size_;
+    }
+
+  private:
+    int size_;
 };
 
 int main(int argc, char* argv[]) {
-  Movable m1;
-  Movable m2(std::move(m1));
-  
-  std::cout << &m2 << std::endl;
-  std::cout << &m1 << std::endl;
+  Square s = 10;
+
+  std::cout << s.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
