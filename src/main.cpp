@@ -1,20 +1,29 @@
 #include <iostream>
 
-class Square {
+class Rectangle {
   public:
-    explicit Square(int size) : size_(size) {};
+    Rectangle() : height_(0), width_(0) {
+      std::cout << "Rectangle::Rectangle() is called." << std::endl;
+    }
 
     int Area() {
-      return size_ * size_;
+      return height_ * width_;
     }
 
   private:
-    int size_;
+    const int height_;
+    const int width_;
+};
+
+class Square : public Rectangle {
+  public:
+    Square() {
+      std::cout << "Square::Square() is called." << std::endl;
+    }
 };
 
 int main(int argc, char* argv[]) {
-  Square s = 10;
-  // Square s(100);
+  Square s;
 
   std::cout << s.Area() << std::endl;
 
