@@ -11,7 +11,7 @@ class Rectangle {
     int width;
 };
 
-class Squere : protected Rectangle {
+class Squere : public Rectangle {
   public:
     void setSize(int size) {
       height = size;
@@ -22,7 +22,11 @@ class Squere : protected Rectangle {
 int main(int argc, char* argv[]) {
   Squere s;
   s.setSize(10);
-  std::cout << s.Area() << std::endl;
+
+  std::cout << "s=" << s.Area() << std::endl;
+
+  Rectangle& r = s;
+  std::cout << "r=" << r.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
