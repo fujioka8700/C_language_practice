@@ -2,7 +2,7 @@
 
 class Rectangle {
   public:
-    Rectangle() : height_(0), width_(0) {
+    Rectangle(int height, int width) : height_(height), width_(width) {
       std::cout << "Rectangle::Rectangle() is called." << std::endl;
     }
 
@@ -17,13 +17,13 @@ class Rectangle {
 
 class Square : public Rectangle {
   public:
-    Square() {
+    Square(int size) : Rectangle(size, size) {
       std::cout << "Square::Square() is called." << std::endl;
     }
 };
 
 int main(int argc, char* argv[]) {
-  Square s;
+  Square s(10);
 
   std::cout << s.Area() << std::endl;
 
