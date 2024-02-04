@@ -2,7 +2,7 @@
 
 class Square {
   public:
-    Square(int size) : size_(size) {};
+    explicit Square(int size) : size_(size) {};
 
     int Area() {
       return size_ * size_;
@@ -14,6 +14,7 @@ class Square {
 
 int main(int argc, char* argv[]) {
   Square s = 10;
+  // Square s(100);
 
   std::cout << s.Area() << std::endl;
 
