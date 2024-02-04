@@ -7,6 +7,7 @@ class Rectangle {
       return this->height * this->width;
     };
 
+  private:
     int height;
     int width;
 };
