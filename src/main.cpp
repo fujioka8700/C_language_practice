@@ -1,21 +1,25 @@
-#include "aaa.hpp"
 #include <iostream>
-#include <vector>
-#include <string>
 
-void Print(std::string&) {
-  std::cout << "左辺値参照" << std::endl;
-}
+class Rectangle {
+  public:
+    Rectangle(int height, int width);
 
-void Print(std::string&&) {
-  std::cout << "右辺値参照" << std::endl;
-}
+    int Area() const {
+      return height_ * width_;
+    };
+
+  private:
+    const int height_;
+    const int width_;
+};
+
+Rectangle::Rectangle(int height, int width) :
+  height_(height), width_(width) {}
 
 int main(int argc, char* argv[]) {
-  std::string str = "hoge";
+  Rectangle r(10, 20);
 
-  Print(str);
-  Print(std::move(str));
+  std::cout << r.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
