@@ -1,13 +1,36 @@
 #include <iostream>
-#include <memory>
+
+class Rectangle {
+  public:
+    virtual void Describe() const {
+      std::cout << "height = " << height_ << std::endl;
+      std::cout << "width = " << width_ << std::endl;
+    }
+
+  protected:
+    int height_;
+    int width_;
+};
+
+class Square : public Rectangle {
+  public:
+    void SetSize(int size) {
+      height_ = size;
+      width_ = size;
+    }
+
+    void Describe() const override {
+      std::cout << "size = " << height_ << std::endl;
+    }
+};
 
 int main(int argc, char* argv[]) {
-  std::shared_ptr<int> sp = std::make_shared<int>(246);
-  std::weak_ptr<int> wp = sp;
-  std::shared_ptr<int> sp2 = wp.lock();
+  Square s;
+  s.SetSize(100);
+  s.Describe();
 
-  std::cout << *sp << std::endl;
-  std::cout << *sp2 << std::endl;
+  Rectangle& r = s;
+  r.Describe();
 
   std::cout << "おわり" << std::endl;
 
