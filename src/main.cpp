@@ -1,23 +1,20 @@
 #include <iostream>
-#include <string>
-
-// 左辺値参照
-void Print(std::string& str) {
-  std::cout << str << std::endl;
-}
-
-// 右辺値参照
-void Print2(std::string&& str) {
-  std::cout << str << std::endl;
-}
+#include <memory>
 
 int main(int argc, char* argv[]) {
-  std::string str = "hoge";
+  std::shared_ptr<int> x = std::make_shared<int>(100);
 
-  Print(str);
-  Print2(std::move(str));
+  {
+    std::shared_ptr<int> y = x;
+
+    std::cout << *y << std::endl;
+
+    *y = 200;
+  } // y が破棄される
+
+  std::cout << *x << std::endl;
 
   std::cout << "おわり" << std::endl;
 
   return 0;
-}
+} // x の所有者が0人になり、x のデストラクタで delete される。
