@@ -9,6 +9,7 @@ int main(int argc, char* argv[]) {
 
   Rectangle& r = s;
   r.Describe();
+  std::cout << r.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 

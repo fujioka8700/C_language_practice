@@ -4,6 +4,8 @@
  class Rectangle {
   public:
     virtual void Describe() const;
+    
+    int Area() const;
 
   protected:
     int height_;
