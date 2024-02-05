@@ -8,19 +8,19 @@ OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCE:.cpp=.o))
 LIBRARY = 
 
 $(TARGET): $(OBJECTS)
-	mkdir -p $(dir $@)
-	$(CC) $^ -o $(TARGET)
+	@mkdir -p $(dir $@)
+	@$(CC) $^ -o $(TARGET)
 
 $(OBJDIR)/%.o: %.cpp
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
 all: $(TARGET)
 
 excute:
-	$(TARGET)
+	@$(TARGET)
 
 clean:
-	rm -rf $(OBJECTS) $(TARGET)
+	@rm -rf $(OBJECTS) $(TARGET)
 
 re: clean all excute
