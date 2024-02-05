@@ -6,9 +6,9 @@ int main(int argc, char* argv[]) {
 
   x[10] = 999;
 
-  std::vector<int> y = x;
+  std::vector<int> y = std::move(x);
 
-  std::cout << x[10] << std::endl;
+  // std::cout << x[10] << std::endl;
   std::cout << y[10] << std::endl;
 
   std::cout << "おわり" << std::endl;
