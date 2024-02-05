@@ -1,13 +1,17 @@
 #include <iostream>
+#include "pointer.hpp"
 
 int main(int argc, char* argv[]) {
-  int* p1 = new int(100);
+  int size = 500;
+  int* p = new int[size];
 
-  std::cout << *p1 << std::endl;
-  delete p1;
-  std::cout << *p1 << std::endl;
+  Set(size, p);
+
+  Show(size, p);
 
   std::cout << "おわり" << std::endl;
+
+  delete[] p;
 
   return 0;
 }

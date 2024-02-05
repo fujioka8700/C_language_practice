@@ -2,7 +2,7 @@ CC      = g++
 CFLAGS  = -g -Wall -O2
 INCLUDE	= -I ../include
 TARGET  = ../bin/main
-SOURCE  = main.cpp aaa.cpp bbb.cpp
+SOURCE  = main.cpp aaa.cpp bbb.cpp pointer.cpp
 OBJDIR	= ../obj
 OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCE:.cpp=.o))
 LIBRARY = 
