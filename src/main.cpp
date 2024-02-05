@@ -7,7 +7,7 @@ class Polygon {
 
 class Rectangle : public Polygon {
   public:
-    Rectangle() : height_(2), width_(3) {}
+    Rectangle();
     int Area() const override {
       return height_ * width_;
     }
@@ -16,6 +16,8 @@ class Rectangle : public Polygon {
     int height_;
     int width_;
 };
+
+Rectangle::Rectangle() : height_(2), width_(3) {}
 
 int main(int argc, char* argv[]) {
   Rectangle r;
