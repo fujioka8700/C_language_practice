@@ -1,30 +1,22 @@
 #include <iostream>
+#include <memory>
 
-class Polygon {
+class Parent {
   public:
-    virtual int Area() const = 0;
-};
-
-class Rectangle : public Polygon {
-  public:
-    Rectangle();
-    int Area() const override {
-      return height_ * width_;
+    virtual ~Parent() {
+      std::cout << "Parent::~Parent() is called." << std::endl;
     }
-
-  public:
-    int height_;
-    int width_;
 };
 
-Rectangle::Rectangle() : height_(2), width_(3) {}
+class Child : public Parent {
+  public:
+    ~Child() override {
+      std::cout << "Child::~Child() is called." << std::endl;
+    }
+};
 
 int main(int argc, char* argv[]) {
-  Rectangle r;
-  std::cout << r.Area() << std::endl;
-
-  Polygon& p = r;
-  std::cout << p.Area() << std::endl;
+  std::unique_ptr<Parent> p(new Child());
 
   std::cout << "おわり" << std::endl;
 
