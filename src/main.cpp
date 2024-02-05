@@ -1,15 +1,21 @@
 #include <iostream>
-#include <vector>
+#include <string>
+
+// 左辺値参照
+void Print(std::string& str) {
+  std::cout << str << std::endl;
+}
+
+// 右辺値参照
+void Print2(std::string&& str) {
+  std::cout << str << std::endl;
+}
 
 int main(int argc, char* argv[]) {
-  std::vector<int> x(1000000);
+  std::string str = "hoge";
 
-  x[10] = 999;
-
-  std::vector<int> y = std::move(x);
-
-  // std::cout << x[10] << std::endl;
-  std::cout << y[10] << std::endl;
+  Print(str);
+  Print2(std::move(str));
 
   std::cout << "おわり" << std::endl;
 
