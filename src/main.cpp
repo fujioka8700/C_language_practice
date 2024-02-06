@@ -1,22 +1,29 @@
 #include <iostream>
-#include <memory>
 
-class Parent {
+class Integer {
   public:
-    virtual ~Parent() {
-      std::cout << "Parent::~Parent() is called." << std::endl;
+    explicit Integer(int value) : value_(value) {};
+
+    int Value() const {
+      return value_;
     }
+
+  private:
+    int value_;
 };
 
-class Child : public Parent {
-  public:
-    ~Child() override {
-      std::cout << "Child::~Child() is called." << std::endl;
-    }
-};
+Integer operator-(const Integer& v) {
+  Integer tmp(-v.Value());
+  return tmp;
+}
 
 int main(int argc, char* argv[]) {
-  std::unique_ptr<Parent> p(new Child());
+  Integer a(2);
+
+  Integer b = -a;
+
+  std::cout << a.Value() << std::endl;
+  std::cout << b.Value() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
