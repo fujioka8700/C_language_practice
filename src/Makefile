@@ -2,25 +2,25 @@ CC      = g++
 CFLAGS  = -g -Wall -O2
 INCLUDE	= -I ../include
 TARGET  = ../bin/main
-SOURCE  = main.cpp aaa.cpp bbb.cpp
+SOURCE  = main.cpp integer.cpp realnumber.cpp utils.cpp
 OBJDIR	= ../obj
 OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCE:.cpp=.o))
 LIBRARY = 
 
 $(TARGET): $(OBJECTS)
-	mkdir -p $(dir $@)
-	$(CC) $^ -o $(TARGET)
+	@mkdir -p $(dir $@)
+	@$(CC) $^ -o $(TARGET)
 
 $(OBJDIR)/%.o: %.cpp
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
 all: $(TARGET)
 
 excute:
-	$(TARGET)
+	@$(TARGET)
 
 clean:
-	rm -rf $(OBJECTS) $(TARGET)
+	@rm -rf $(OBJECTS) $(TARGET)
 
 re: clean all excute

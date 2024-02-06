@@ -1,17 +1,20 @@
 #include <iostream>
-
-class Movable {
-  public:
-    Movable() {};
-    Movable(Movable&& m) {};
-};
+#include "utils.hpp"
+#include "integer.hpp"
+#include "realnumber.hpp"
 
 int main(int argc, char* argv[]) {
-  Movable m1;
-  Movable m2(std::move(m1));
-  
-  std::cout << &m2 << std::endl;
-  std::cout << &m1 << std::endl;
+  Integer a(2);
+  Integer b(3);
+  Integer c = a + b;
+  std::cout << c.Value() << std::endl;
+
+  RealNumber d(3.5);
+  RealNumber e = a + d;
+  std::cout << e.Value() << std::endl;
+
+  RealNumber f = d + a;
+  std::cout << f.Value() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
