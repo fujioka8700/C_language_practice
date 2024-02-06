@@ -13,8 +13,14 @@ class Integer {
     return *this;
   }
 
+  Integer operator++(int) {
+    Integer tmp(Value());
+    ++value_;
+    return tmp;
+  }
+
   Integer operator-() const  {
-    Integer tmp(-value_);
+    Integer tmp(Value());
     return tmp;
   }
 
@@ -29,6 +35,9 @@ int main(int argc, char* argv[]) {
   std::cout << b.Value() << std::endl;
 
   ++a; // a.operator++();
+  std::cout << a.Value() << std::endl;
+
+  a++; // a.operator++(1);
   std::cout << a.Value() << std::endl;
 
   std::cout << "おわり" << std::endl;
