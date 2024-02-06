@@ -8,26 +8,23 @@ class Integer {
       return value_;
     }
 
-    Integer operator-() const {
-      Integer tmp(-Value());
-      return tmp;
-    }
   private:
     int value_;
 };
 
-// Integer operator-(const Integer& v) {
-//   Integer tmp(-v.Value());
-//   return tmp;
-// }
+Integer operator+(const Integer& lhs, const Integer& rhs) {
+  Integer tmp(lhs.Value() + rhs.Value());
+  return tmp;
+}
 
 int main(int argc, char* argv[]) {
   Integer a(2);
-
-  Integer b = -a;
+  Integer b(3);
+  Integer c = a + b;
 
   std::cout << a.Value() << std::endl;
   std::cout << b.Value() << std::endl;
+  std::cout << c.Value() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
