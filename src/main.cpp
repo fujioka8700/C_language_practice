@@ -1,44 +1,27 @@
 #include <iostream>
 
-class Integer {
+class Copyable {
   public:
-    Integer(int value) : value_(value) {};
+    Copyable() {};
 
-  int Value() const {
-    return value_;
-  }
+    Copyable(const Copyable& c) {
+      std::cout << "c3:" << this << std::endl;
+      std::cout << "c2:" << &c << std::endl;
+      std::cout << "コピーコンストラクタ" << std::endl;
+    }
 
-  Integer& operator++() {
-    ++value_;
-    return *this; // *this は、呼び出し元にオブジェクトの参照を返す
-  }
-
-  Integer operator++(int) {
-    Integer tmp(Value());
-    ++value_;
-    return tmp;
-  }
-
-  Integer operator-() const  {
-    Integer tmp(Value());
-    return tmp;
-  }
-
-  private:
-    int value_;
+    Copyable& operator=(const Copyable& c) {
+      std::cout << "c1:" << this << std::endl;
+      std::cout << "c2:" << &c << std::endl;
+      std::cout << "コピー演算子" << std::endl;;
+      return * this;
+    };
 };
 
 int main(int argc, char* argv[]) {
-  Integer a(2);
-
-  Integer b = -a; // a.operator-() と同義
-  std::cout << b.Value() << std::endl;
-
-  ++a; // a.operator++() と同義
-  std::cout << a.Value() << std::endl;
-
-  a++; // a.operator++(1) と同義
-  std::cout << a.Value() << std::endl;
+  Copyable c1, c2;
+  c1 = c2; // c1.operator=(c2);
+  Copyable c3 = c2;
 
   std::cout << "おわり" << std::endl;
 
