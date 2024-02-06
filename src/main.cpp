@@ -8,14 +8,18 @@ class Integer {
       return value_;
     }
 
+    Integer operator-() const {
+      Integer tmp(-Value());
+      return tmp;
+    }
   private:
     int value_;
 };
 
-Integer operator-(const Integer& v) {
-  Integer tmp(-v.Value());
-  return tmp;
-}
+// Integer operator-(const Integer& v) {
+//   Integer tmp(-v.Value());
+//   return tmp;
+// }
 
 int main(int argc, char* argv[]) {
   Integer a(2);
