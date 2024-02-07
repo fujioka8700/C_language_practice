@@ -1,17 +1,22 @@
 #include <iostream>
 
-struct Rectangle {
-  int height;
+union Common {
   int width;
-};
+  float height;
+} c;
+
+int w;
+float h;
 
 int main(int argc, char* argv[]) {
-  Rectangle r;
-  r.height = 10;
-  r.width  = 20;
+  c.height = 10.0;
+  c.width = 5;
 
-  std::cout << r.height << std::endl;
-  std::cout << r.width << std::endl;
+  w = c.width;
+  h = c.height;
+
+  std::cout << w << std::endl;
+  std::cout << h << std::endl;
 
   std::cout << "おわり" << std::endl;
 
