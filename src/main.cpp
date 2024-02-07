@@ -1,24 +1,17 @@
 #include <iostream>
 
-class Square {
+class NonCopyable {
   public:
-    explicit Square(int size) : size_(size) {}
-    Square() = default; // default 指定
-
-    int Area() {
-      return size_ * size_;
-    }
-
-  private:
-    int size_;
+    NonCopyable() = default;
+    NonCopyable(const NonCopyable&) = delete;
+    NonCopyable& operator=(const NonCopyable&) = delete;
 };
 
 int main(int argc, char* argv[]) {
-  Square s1;
-  Square s2(10);
-
-  std::cout << s1.Area() << std::endl;
-  std::cout << s2.Area() << std::endl;
+  NonCopyable n1;
+  // NonCopyable n2 = n2;
+  NonCopyable n3;
+  // n3 = n1; // n3.operator=(n1)
 
   std::cout << "おわり" << std::endl;
 
