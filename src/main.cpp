@@ -1,38 +1,24 @@
 #include <iostream>
 
-class Movable {
+class Square {
   public:
-    Movable(int value) : value_(value) {
-      std::cout << "デフォルトコンストラクタ" << std::endl;
-    }
-    Movable(Movable&& m) : value_(m.Value()) {
-      std::cout << "ムーブコンストラクタ" << std::endl;
-    }
-    Movable& operator=(Movable&& m) { // ムーブ代入演算子
-      std::cout << "ムーブ代入演算子" << std::endl;
-      value_ = m.Value();
-      return *this;
+    explicit Square(int size) : size_(size) {}
+    Square() = default; // default 指定
 
-      std::cout << Value() << std::endl;
-      std::cout << this->Value() << std::endl;
-      std::cout << (*this).Value() << std::endl;
-    }
-
-    int Value() {
-      return value_;
+    int Area() {
+      return size_ * size_;
     }
 
   private:
-    int value_;
+    int size_;
 };
 
 int main(int argc, char* argv[]) {
-  Movable m1(10);
-  Movable m2(20);
-  m1.operator=(std::move(m2));
+  Square s1;
+  Square s2(10);
 
-  std::cout << m1.Value() << std::endl;
-  std::cout << m2.Value() << std::endl;
+  std::cout << s1.Area() << std::endl;
+  std::cout << s2.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
