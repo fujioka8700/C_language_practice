@@ -1,11 +1,5 @@
 #include <iostream>
-
-class Counter {
-  public:
-    static int count_;
-};
-
-int Counter::count_ = 10;
+#include "counter.hpp"
 
 int main(int argc, char* argv[]) {
   std::cout << Counter::count_ << std::endl;

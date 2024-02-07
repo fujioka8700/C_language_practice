@@ -2,7 +2,7 @@ CC      = g++
 CFLAGS  = -g -Wall -O2
 INCLUDE	= -I ../include
 TARGET  = ../bin/main
-SOURCE  = main.cpp integer.cpp realnumber.cpp utils.cpp
+SOURCE  = main.cpp counter.cpp
 OBJDIR	= ../obj
 OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCE:.cpp=.o))
 LIBRARY = 
