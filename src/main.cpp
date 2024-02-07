@@ -1,17 +1,16 @@
 #include <iostream>
 
-class NonCopyable {
+class Counter {
   public:
-    NonCopyable() = default;
-    NonCopyable(const NonCopyable&) = delete;
-    NonCopyable& operator=(const NonCopyable&) = delete;
+    static int count_;
 };
 
+int Counter::count_ = 10;
+
 int main(int argc, char* argv[]) {
-  NonCopyable n1;
-  // NonCopyable n2 = n2;
-  NonCopyable n3;
-  // n3 = n1; // n3.operator=(n1)
+  std::cout << Counter::count_ << std::endl;
+  ++Counter::count_;
+  std::cout << Counter::count_ << std::endl;
 
   std::cout << "おわり" << std::endl;
 
