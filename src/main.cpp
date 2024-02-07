@@ -1,27 +1,17 @@
 #include <iostream>
 
-class Copyable {
-  public:
-    Copyable() {};
-
-    Copyable(const Copyable& c) {
-      std::cout << "c3:" << this << std::endl;
-      std::cout << "c2:" << &c << std::endl;
-      std::cout << "コピーコンストラクタ" << std::endl;
-    }
-
-    Copyable& operator=(const Copyable& c) {
-      std::cout << "c1:" << this << std::endl;
-      std::cout << "c2:" << &c << std::endl;
-      std::cout << "コピー演算子" << std::endl;;
-      return * this;
-    };
+struct Rectangle {
+  int height;
+  int width;
 };
 
 int main(int argc, char* argv[]) {
-  Copyable c1, c2;
-  c1 = c2; // c1.operator=(c2);
-  Copyable c3 = c2;
+  Rectangle r;
+  r.height = 10;
+  r.width  = 20;
+
+  std::cout << r.height << std::endl;
+  std::cout << r.width << std::endl;
 
   std::cout << "おわり" << std::endl;
 
