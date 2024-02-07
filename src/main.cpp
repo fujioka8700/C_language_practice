@@ -1,21 +1,22 @@
 #include <iostream>
+#include <math.h>
 
-enum class Day {
-    Sun,  // 0
-    Mon,  // 1
-    Tue,  // 2
-    Wed,  // 3
-    Thu,  // 4
-    Fri,  // 5
-    Sat   // 6
+class Square {
+  public:
+    explicit Square(int size) : size_(size) {}
+
+    int Area() {
+      return pow(size_, 2);
+    }
+  
+  private:
+    int size_;
 };
 
 int main(int argc, char* argv[]) {
-  Day day1 = static_cast<Day>(1);
-  int day2 = static_cast<int>(Day::Tue);
-  
-  std::cout << static_cast<int>(day1) << std::endl;
-  std::cout << day2 << std::endl;
+  Square square = static_cast<Square>(10);
+
+  std::cout << square.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
