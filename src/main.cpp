@@ -1,16 +1,15 @@
 #include <iostream>
-
-class Base {
-  public:
-    virtual ~Base() {}
-};
-
-class Sub : public Base {};
+#include <string>
 
 int main(int argc, char* argv[]) {
-  Sub* s = dynamic_cast<Sub*>(new Base());
+  const std::string str("hoge");
+  std::string& x = const_cast<std::string&>(str);
 
-  std::cout << s << std::endl;
+  // str.replace(str.begin(), str.end(), "fuga");
+  std::cout << str << std::endl;
+
+  x.replace(x.begin(), x.end(), "fuga");
+  std::cout << x << std::endl;
   
   std::cout << "おわり" << std::endl;
 
