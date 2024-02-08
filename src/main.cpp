@@ -1,22 +1,14 @@
 #include <iostream>
-#include <math.h>
 
-class Square {
-  public:
-    explicit Square(int size) : size_(size) {}
-
-    int Area() {
-      return pow(size_, 2);
-    }
-  
-  private:
-    int size_;
+template <typename T>
+T Sum(T a, T b) {
+  return a + b;
 };
 
 int main(int argc, char* argv[]) {
-  Square square = static_cast<Square>(10);
+  int result = Sum<int>(1, 2);
 
-  std::cout << square.Area() << std::endl;
+  std::cout << result << std::endl;
 
   std::cout << "おわり" << std::endl;
 
