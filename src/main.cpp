@@ -1,23 +1,17 @@
 #include <iostream>
-#include <math.h>
 
-class Square {
+class Base {
   public:
-    explicit Square(int size) : size_(size) {}
-
-    int Area() {
-      return pow(size_, 2);
-    }
-  
-  private:
-    int size_;
+    virtual ~Base() {}
 };
 
+class Sub : public Base {};
+
 int main(int argc, char* argv[]) {
-  Square square = static_cast<Square>(10);
+  Sub* s = dynamic_cast<Sub*>(new Base());
 
-  std::cout << square.Area() << std::endl;
-
+  std::cout << s << std::endl;
+  
   std::cout << "おわり" << std::endl;
 
   return 0;
