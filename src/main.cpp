@@ -1,14 +1,15 @@
 #include <iostream>
 
-template <typename T, typename U>
-auto Sum(T a, U b) {
-  return static_cast<U>(a) + b;
+template <int N, typename T>
+void Sum() {
+  for (int i = 0; i < N; i++)
+  {
+    std::cout << i;
+  }
 };
 
 int main(int argc, char* argv[]) {
-  auto result = Sum<int, double>(1, 2.5);
-
-  std::cout << result << std::endl;
+  Sum<10, int>();
 
   std::cout << "おわり" << std::endl;
 
