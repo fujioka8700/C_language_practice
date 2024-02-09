@@ -1,15 +1,26 @@
 #include <iostream>
 
-template <int N, typename T>
-void Sum() {
-  for (int i = 0; i < N; i++)
-  {
-    std::cout << i;
-  }
+template <typename T>
+class Rectangle {
+  public:
+    Rectangle(T height, T width)
+      : height_(height), width_(width) {}
+
+    T Area() const {
+      return height_ * width_;
+    }
+
+  private:
+    const T height_;
+    const T width_;
 };
 
 int main(int argc, char* argv[]) {
-  Sum<10, int>();
+  Rectangle<int> r1(10, 20);
+  std::cout << r1.Area() << std::endl;
+
+  Rectangle<double> r2(1.2, 3.4);
+  std::cout << r2.Area() << std::endl;
 
   std::cout << "おわり" << std::endl;
 
