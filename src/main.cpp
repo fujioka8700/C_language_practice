@@ -6,7 +6,7 @@ T Sum(T a, T b) {
 };
 
 int main(int argc, char* argv[]) {
-  int result = Sum<int>(1, 2);
+  int result = Sum(1, 2);
 
   std::cout << result << std::endl;
 
