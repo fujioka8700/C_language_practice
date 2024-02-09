@@ -1,26 +1,19 @@
 #include <iostream>
 
-template <typename T, typename U>
-class Rectangle {
+template <typename T, int N>
+class Array {
   public:
-    Rectangle(T height, U width)
-      : height_(height), width_(width) {}
-
-    auto Area() const  -> decltype(std::declval<T>() * std::declval<T>()) {
-      return height_ * width_;
+    int size() const {
+      return N;
     }
-
+    
   private:
-    const T height_;
-    const T width_;
+    T data_[N];
 };
 
 int main(int argc, char* argv[]) {
-  Rectangle<int, int> r1(10, 20);
-  std::cout << r1.Area() << std::endl;
-
-  Rectangle<double, double> r2(1.2, 3.4);
-  std::cout << r2.Area() << std::endl;
+  Array<int, 5> ary;
+  std::cout << ary.size() << std::endl; 
 
   std::cout << "おわり" << std::endl;
 
