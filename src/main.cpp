@@ -1,19 +1,8 @@
 #include <iostream>
-
-template <typename T, int N>
-class Array {
-  public:
-    int size() const {
-      return N;
-    }
-    
-  private:
-    T data_[N];
-};
+#include "sum.hpp"
 
 int main(int argc, char* argv[]) {
-  Array<int, 5> ary;
-  std::cout << ary.size() << std::endl; 
+  std::cout << Sum<int>(1, 2) << std::endl; 
 
   std::cout << "おわり" << std::endl;
 
