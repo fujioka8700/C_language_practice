@@ -1,12 +1,12 @@
 #include <iostream>
 
-template <typename T>
-T Sum(T a, T b) {
+template <typename T, typename U>
+U Sum(T a, U b) {
   return a + b;
 };
 
 int main(int argc, char* argv[]) {
-  int result = Sum(1, 2);
+  double result = Sum<int, double>(1, 2.5);
 
   std::cout << result << std::endl;
 
