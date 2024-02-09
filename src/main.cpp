@@ -1,54 +1,35 @@
 #include <iostream>
 
-template <typename T>
-class Array {
-  public:
-    explicit Array(int size)
-      : size_(size),
-        data_(new T[size_]) {}
-
-    ~Array() {
-      delete[] data_;
-    }
-
-    int Size() const {
-      return size_;
-    }
-
-  private:
-    const int size_;
-    T* data_;
-};
-
-template <>
-class Array<bool> {
-  public:
-    explicit Array(int size)
-      : size_(size),
-        data_size_((size - 1) / 8 + 1),
-        data_(new uint8_t[data_size_]) {}
-
-    ~Array() {
-      delete[] data_;
-    }
-
-    int Size() const {
-      return size_;
-    }
-
-  public:
-    const int size_;
-    const int data_size_;
-    uint8_t* data_;
-};
-
 int main(int argc, char* argv[]) {
-  Array<int> ary1(5);
-  std::cout << ary1.Size() << std::endl;
+  std::string str = "123XY56";
+  
+  try {
+    int num = 0;
 
-  Array<bool> ary2(10); // テンプレート引数を bool にした時のみ完全特殊化される。
-  std::cout << ary2.Size() << std::endl;
-  std::cout << ary2.data_size_ << std::endl;
+    for (const auto s : str) {
+      num *= 10;
+      switch (s) {
+        case '0':  num += 0;  break;
+        case '1':  num += 1;  break;
+        case '2':  num += 2;  break;
+        case '3':  num += 3;  break;
+        case '4':  num += 4;  break;
+        case '5':  num += 5;  break;
+        case '6':  num += 6;  break;
+        case '7':  num += 7;  break;
+        case '8':  num += 8;  break;
+        case '9':  num += 9;  break;
+        default:
+          // コンストラクタの引数でエラーメッセージを設定
+          throw std::runtime_error("数値ではない文字が入っています");
+      }
+    }
+
+  std::cout << num << std::endl;  // 問題なく変換できた場合には変換後の値を出力
+} catch (const std::runtime_error& e) {
+   // what() でエラーメッセージを取得
+   std::cout << e.what() << std::endl;
+}
 
   std::cout << "おわり" << std::endl;
 
