@@ -6,7 +6,7 @@ class Rectangle {
     Rectangle(T height, U width)
       : height_(height), width_(width) {}
 
-    T Area() const {
+    auto Area() const  -> decltype(std::declval<T>() * std::declval<T>()) {
       return height_ * width_;
     }
 
