@@ -1,13 +1,11 @@
 #include <iostream>
 
-int Add(int x, int y) {
-    return x + y;
-}
-
 int main(int argc, char* argv[]) {
-  int (*fp)(int, int) = Add;
+  int x[5] = {0, 10, 20, 30, 40};
 
-  std::cout << fp(1, 2) << std::endl;
+  for(auto i: x) {
+    std::cout << i << std::endl;
+  }
 
   std::cout << "おわり" << std::endl;
 
