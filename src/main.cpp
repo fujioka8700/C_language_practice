@@ -1,8 +1,15 @@
 #include <iostream>
-#include <cassert>
+#include <fstream>
+#include <string>
+#include <vector>
 
 int main(int argc, char* argv[]) {
-  assert(1 == 2);
+  std::ofstream file("../files/fruits.txt");
+  std::vector<std::string> fruits = { "apple", "strawberry", "pear", "grape" };
+
+  for (const auto &fruit : fruits) {
+    file << fruit << std::endl;
+  }
 
   std::cout << "おわり" << std::endl;
 
