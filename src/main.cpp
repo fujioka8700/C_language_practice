@@ -1,7 +1,8 @@
 #include <iostream>
+#include <array>
 
 int main(int argc, char* argv[]) {
-  int x[5] = {0, 10, 20, 30, 40};
+  std::array<int, 5> x = {0, 1, 2, 3, 4};
 
   for(auto i: x) {
     std::cout << i << std::endl;
