@@ -1,8 +1,14 @@
 #include <iostream>
-#include "other.hpp"
+#include <fstream>
+#include <string>
 
 int main(int argc, char* argv[]) {
-  std::cout << x << std::endl;
+  std::ifstream file("../files/file.txt");
+  std::string line;
+
+  while (std::getline(file, line)) {
+    std::cout << line << std::endl;
+  }
 
   std::cout << "おわり" << std::endl;
 
