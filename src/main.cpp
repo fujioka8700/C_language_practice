@@ -1,13 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 int main(int argc, char* argv[]) {
-  std::ifstream file("../files/file.txt");
-  std::string line;
+  std::ofstream file("../files/fruits.txt");
+  std::vector<std::string> fruits = { "apple", "strawberry", "pear", "grape" };
 
-  while (std::getline(file, line)) {
-    std::cout << line << std::endl;
+  for (const auto &fruit : fruits) {
+    file << fruit << std::endl;
   }
 
   std::cout << "おわり" << std::endl;
