@@ -1,10 +1,11 @@
 #include <iostream>
-#include <tuple>
+#include <vector>
 
 int main(int argc, char* argv[]) {
-  std::tuple<std::string, int> person { "Bob", 20 };
+  std::vector<int> v = {1, 2, 3};
+  std::vector<int>::iterator itr = v.begin();
 
-  std::cout << std::get<1>(person) << std::endl;
+  std::cout << itr[0] << std::endl;
 
   std::cout << "おわり" << std::endl;
 
