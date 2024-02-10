@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-  auto x = 5;
+  std::int64_t x = 5;
 
   std::cout << sizeof x << std::endl;
 
