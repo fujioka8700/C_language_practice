@@ -1,11 +1,11 @@
 #include <iostream>
-#include <array>
+#include <string>
 
 int main(int argc, char* argv[]) {
-  std::array<int, 5> x = {0, 1, 2, 3, 4};
+  std::string s = "Hello";
 
-  for(auto i: x) {
-    std::cout << i << std::endl;
+  for(int i: s) {
+    std::cout << static_cast<char>(i);
   }
 
   std::cout << "おわり" << std::endl;
