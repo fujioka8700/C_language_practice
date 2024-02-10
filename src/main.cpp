@@ -1,12 +1,10 @@
 #include <iostream>
-#include <string>
+#include <tuple>
 
 int main(int argc, char* argv[]) {
-  std::string s = "Hello";
+  std::tuple<std::string, int> person { "Bob", 20 };
 
-  for(int i: s) {
-    std::cout << static_cast<char>(i);
-  }
+  std::cout << std::get<1>(person) << std::endl;
 
   std::cout << "おわり" << std::endl;
 
