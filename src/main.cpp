@@ -1,9 +1,17 @@
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-  std::int64_t x = 5;
+enum Day {
+  Sun,  // 0
+  Mon,  // 1
+  Tue,  // 2
+  Wed,  // 3
+  Thu,  // 4
+  Fri,  // 5
+  Sat   // 6
+};
 
-  std::cout << sizeof x << std::endl;
+int main(int argc, char* argv[]) {
+  std::cout << Day::Tue << std::endl;
 
   std::cout << "おわり" << std::endl;
 
