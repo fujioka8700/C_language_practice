@@ -1,14 +1,12 @@
 #include <iostream>
+#include <vector>
 
 int main(int argc, char* argv[]) {
-  int* p1 = new int(100);
-  int* p2 = new int[5];
+  std::vector<int> x(1000000);
+  std::vector<int> y = std::move(x);
 
-  delete p1;
-  delete[] p2;
-
-  std::cout << *p1 << std::endl;
-  std::cout << *p2 << std::endl;
+  std::cout << x[0] << std::endl;
+  std::cout << y[0] << std::endl;
 
   std::cout << "おわり" << std::endl;
 
