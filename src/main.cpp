@@ -1,6 +1,6 @@
 #include <iostream>
 
-enum Day {
+enum class Day {
   Sun,  // 0
   Mon,  // 1
   Tue,  // 2
@@ -11,7 +11,9 @@ enum Day {
 };
 
 int main(int argc, char* argv[]) {
-  std::cout << Day::Tue << std::endl;
+  Day day = Day::Fri;
+
+  std::cout << static_cast<int>(day) << std::endl;
 
   std::cout << "おわり" << std::endl;
 
