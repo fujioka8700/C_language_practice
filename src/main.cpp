@@ -1,16 +1,13 @@
 #include <iostream>
 
+int Add(int x, int y) {
+    return x + y;
+}
+
 int main(int argc, char* argv[]) {
-  int x = 5;
-  const int* p = &x;
+  int (*fp)(int, int) = Add;
 
-  *p = 456;
-
-  std::cout << &x << std::endl;
-  std::cout <<  p << std::endl;
-
-  std::cout <<  x << std::endl;
-  std::cout << *p << std::endl;
+  std::cout << fp(1, 2) << std::endl;
 
   std::cout << "おわり" << std::endl;
 
