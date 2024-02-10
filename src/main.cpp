@@ -1,15 +1,14 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
 
 int main(int argc, char* argv[]) {
-  std::ofstream file("../files/fruits.txt");
-  std::vector<std::string> fruits = { "apple", "strawberry", "pear", "grape" };
+  int* p1 = new int(100);
+  int* p2 = new int[5];
 
-  for (const auto &fruit : fruits) {
-    file << fruit << std::endl;
-  }
+  delete p1;
+  delete[] p2;
+
+  std::cout << *p1 << std::endl;
+  std::cout << *p2 << std::endl;
 
   std::cout << "おわり" << std::endl;
 
