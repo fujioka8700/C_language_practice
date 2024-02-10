@@ -1,11 +1,8 @@
 #include <iostream>
-#include <vector>
+#include "other.hpp"
 
 int main(int argc, char* argv[]) {
-  std::vector<int> v = {1, 2, 3};
-  std::vector<int>::iterator itr = v.begin();
-
-  std::cout << itr[0] << std::endl;
+  std::cout << x << std::endl;
 
   std::cout << "おわり" << std::endl;
 
